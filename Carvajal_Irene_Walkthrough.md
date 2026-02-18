@@ -67,13 +67,13 @@ Estos son los prompts que le he ido dando al Agente en el "Mission Control". Le 
     el nav debe permanecer siempre en la parte superior y el footer en la parte inferior aunque la pagina no tenga contenido o tenga muy poco contenido
 
 ### Prompt:
-    vale ahora le vamos a dar estilos al proyecto, quiero que sea tema oscuro con colores rosa, morado o azul .
+    Vale ahora le vamos a dar estilos al proyecto, quiero que sea tema oscuro con colores rosa, morado o azul .
     Los juegos deben parecer tarjetas que al pasar el raton se eleve un poco, todas las tarjetas deben ser iguales(mismo tamaño de imagen).
     Dale un estilo profesional al formulario, centrando los elementos y dándole colores atractivos al botón de enviar.
     Y es importante que el proyecto entero sea responsivo, tanto para moviles, tablets y ordenadores
 
 ## ❌ERROR:
-    (El Proyecto aparece completamente negro)
+    (El Proyecto aparece completamente negro) 
 
 ### Prompt:
     ¡Alto! Después de aplicar tu ultimo codigo de estilos, la pantalla se ha quedado completamente negra y no se ve el contenido. He revisado la consola del navegador y el problema de la pantalla negra es un error crítico de React: Uncaught ReferenceError: Link is not defined en el componente Home.jsx. Te has olvidado de importar el componente Link.
