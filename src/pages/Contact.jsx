@@ -29,13 +29,15 @@ function Contact() {
     }
 
     return (
-        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-            <h1>Contacto</h1>
-            <p>Cuéntanos qué te parece Jugan2 o dinos tu juego favorito.</p>
+        <div style={{ maxWidth: '700px', margin: '2rem auto', padding: '0 1rem' }}>
+            <h1 style={{ textAlign: 'center' }}>Ponte en Contacto</h1>
+            <p style={{ textAlign: 'center', color: 'var(--text-muted)', marginBottom: '3rem', fontSize: '1.1rem' }}>
+                ¿Tienes alguna sugerencia o simplemente quieres hablar de juegos? ¡Escribenos!
+            </p>
 
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }} className="card">
                 <div>
-                    <label htmlFor="name" style={{ display: 'block', marginBottom: '0.5rem' }}>Nombre:</label>
+                    <label htmlFor="name" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: 'var(--text-main)' }}>Tu Nombre</label>
                     <input
                         type="text"
                         id="name"
@@ -43,12 +45,20 @@ function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        style={{ width: '100%', padding: '0.5rem' }}
+                        style={{
+                            width: '100%',
+                            padding: '0.8rem',
+                            background: '#1e293b',
+                            border: '1px solid #334155',
+                            borderRadius: '8px',
+                            color: 'white',
+                            outline: 'none'
+                        }}
                     />
                 </div>
 
                 <div>
-                    <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem' }}>Email:</label>
+                    <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: 'var(--text-main)' }}>Correo Electronico</label>
                     <input
                         type="email"
                         id="email"
@@ -56,36 +66,52 @@ function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        style={{ width: '100%', padding: '0.5rem' }}
+                        style={{
+                            width: '100%',
+                            padding: '0.8rem',
+                            background: '#1e293b',
+                            border: '1px solid #334155',
+                            borderRadius: '8px',
+                            color: 'white',
+                            outline: 'none'
+                        }}
                     />
                 </div>
 
                 <div>
-                    <label htmlFor="message" style={{ display: 'block', marginBottom: '0.5rem' }}>Mensaje:</label>
+                    <label htmlFor="message" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: 'var(--text-main)' }}>Tu Mensaje</label>
                     <textarea
                         id="message"
                         name="message"
-                        rows="5"
+                        rows="6"
                         value={formData.message}
                         onChange={handleChange}
                         required
-                        style={{ width: '100%', padding: '0.5rem' }}
+                        style={{
+                            width: '100%',
+                            padding: '0.8rem',
+                            background: '#1e293b',
+                            border: '1px solid #334155',
+                            borderRadius: '8px',
+                            color: 'white',
+                            resize: 'none',
+                            outline: 'none'
+                        }}
                     ></textarea>
                 </div>
 
                 <button
                     type="submit"
                     disabled={submitted}
+                    className="btn-primary"
                     style={{
-                        padding: '0.75rem',
-                        backgroundColor: submitted ? '#ccc' : '#007bff',
-                        color: 'white',
-                        border: 'none',
-                        cursor: submitted ? 'not-allowed' : 'pointer',
-                        fontSize: '1rem'
+                        marginTop: '1rem',
+                        padding: '1rem',
+                        fontSize: '1.1rem',
+                        opacity: submitted ? 0.7 : 1
                     }}
                 >
-                    {submitted ? 'Enviando...' : 'Enviar mensaje'}
+                    {submitted ? 'Enviando Mensaje...' : 'Enviar Mensaje'}
                 </button>
             </form>
         </div>

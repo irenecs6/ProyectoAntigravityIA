@@ -1,7 +1,11 @@
 # Idea del Proyecto: Jugan2
 Una aplicación web interactiva que permite a los usuarios explorar un catálogo de videojuegos utilizando la API de RAWG. Los usuarios pueden ver una lista de títulos y acceder a una vista de detalle con información especifica y plataformas disponibles.
 
-## --- HISTORIAL DE PROMPTS Y DEBUGGING ---
+**Stack elegido**: React (inicializado con Vite), Tailwind CSS para el diseño visual, React Router para la navegación, y LocalStorage combinado con la API externa de RAWG.
+
+##  PROMPTS
+Estos son los prompts que le he ido dando al Agente en el "Mission Control". Le he estado indicando cada paso (crea proyecto, paginas, componentes, estilos, etc):
+
 ### Prompt:
     Inicia la creación del proyecto 'Jugan2'. Tu única tarea ahora mismo es inicializar un proyecto básico de React 
     usando Vite. Ejecuta el comando de terminal necesario de forma directa y sin que requiera interacción manual 
@@ -17,7 +21,7 @@ Una aplicación web interactiva que permite a los usuarios explorar un catálogo
     Crea un inicio simple sin estilos, donde tenga los nombres de los juegos de la api
 
 ### Prompt:
-    Ejecuta el plan y dime cómo levantar el servidor local para verlo
+    Ejecuta el proyecto y dime cómo levantar el servidor local para verlo
 
 ### Prompt:
     Ahora quiero que al pulsar en el nombre de un juego, me lleve a una página de detalle sobre ese mismo juego. Para ello instala la librería react-router-dom para gestionar la navegación.
@@ -26,8 +30,8 @@ Una aplicación web interactiva que permite a los usuarios explorar un catálogo
 ### Prompt:
     Esta bien pero te falta añadir en los detalles las plataformas en las que se puede jugar cada juego
 
-### Prompt:
-    El proyecto sera subido a github, por motivos de seguridad no quiero que la API Key esté visible en el código., por lo tanto guarda la clave api en un archivo oculto para poder subirlo
+### Prompt:(Seguridad)
+    El proyecto sera subido a github, por motivos de seguridad no quiero que la API Key esté visible en el código, por lo tanto guarda la clave api en un archivo oculto para poder subirlo
 
 ### ✅Respuesta:
     ¡Hecho! He tomado las siguientes medidas para asegurar tu API Key antes de que subas el proyecto a GitHub:
@@ -52,5 +56,27 @@ Una aplicación web interactiva que permite a los usuarios explorar un catálogo
 ### Prompt:
     Vale, ahora quiero que me añadas un buscador en el nav.
 
-### Prompt:
+### Prompt: (Duda)
     al usar el buscador en el Nav, me aparecen juegos que no están en la lista inicial de la página de Juegos ¿eso porque es? ¿estas usando la api que te dado?
+    (Aqui me explicas lo que hace y como, y que si lo esta cogiendo de la API)
+
+### Prompt:
+    añademe tambien el juegos un filtro, quiero que filtre por plataforma, genero y que ordene alfabeticamente y por rating.
+
+### Prompt: (Solucionar una parte del proyecto)
+    el nav debe permanecer siempre en la parte superior y el footer en la parte inferior aunque la pagina no tenga contenido o tenga muy poco contenido
+
+### Prompt:
+    vale ahora le vamos a dar estilos al proyecto, quiero que sea tema oscuro con colores rosa, morado o azul .
+    Los juegos deben parecer tarjetas que al pasar el raton se eleve un poco, todas las tarjetas deben ser iguales(mismo tamaño de imagen).
+    Dale un estilo profesional al formulario, centrando los elementos y dándole colores atractivos al botón de enviar.
+    Y es importante que el proyecto entero sea responsivo, tanto para moviles, tablets y ordenadores
+
+## ❌ERROR:
+    (El Proyecto aparece completamente negro)
+
+### Prompt:
+    ¡Alto! Después de aplicar tu ultimo codigo de estilos, la pantalla se ha quedado completamente negra y no se ve el contenido. He revisado la consola del navegador y el problema de la pantalla negra es un error crítico de React: Uncaught ReferenceError: Link is not defined en el componente Home.jsx. Te has olvidado de importar el componente Link.
+
+### Prompt:
+    perfecto, por ultimo quiero que en el nav se vea seleccionado en la pagina que estoy, por ejemplo si estoy en contacto que en el nav este contacto seleccionado o de color

@@ -34,7 +34,7 @@ function App() {
     <Router>
       <div className="app-container">
         <Navbar />
-        <main style={{ padding: '1rem' }}>
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
